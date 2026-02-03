@@ -1,4 +1,4 @@
-# training script for P.SAMD, 27.10.2024, 27.11.2024, 11.12.2024, 15.12.2024
+# Training script for Synth-AST model - no frozen layers
 import yaml
 import sys
 import os
