@@ -1,4 +1,4 @@
-# training script for Synth-AST model - trains only the final fully connected layer
+# Training script for Synth-AST model - trains only the final fully connected layer
 import yaml
 import sys
 import os
@@ -93,8 +93,8 @@ if __name__ == "__main__":
     
     model.to(device)
 
-    for p in model.module.ast.parameters(): p.requires_grad = False
-    for p in model.module.fc.parameters():  p.requires_grad = True
+    for p in model.module.ast.parameters(): p.requires_grad = False # Freezes the AST backbone
+    for p in model.module.fc.parameters():  p.requires_grad = True # Keeps the final fc layer unfrozen
 
     # Optimizer ----------------------------------------------------------------------
     opt = torch.optim.AdamW((p for p in model.parameters() if p.requires_grad),
