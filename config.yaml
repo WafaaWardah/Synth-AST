@@ -1,0 +1,52 @@
+dev_flag: None  # set to None or -1 for full training run, otherwise set to the number of batches to run
+dimension: mos
+interval: 20
+
+training:
+
+  runname: ft-synth-RUN-1
+  # Paths  ---------------------------------------------------------------------------
+  output_dir: "/ds/audio/Speech_Quality_Datasets/weights/synth-AST" # base output directory
+  data_dir: "/ds/audio/Speech_Quality_Datasets/tts_data"
+  dev_labels_path: "/ds/audio/Speech_Quality_Datasets/tts_data/tts_file_stats.csv"
+
+  # Training parame5iers  -------------------------------------------------------------
+  max_epochs: 200
+  es_patience: 20
+  lr: 0.000001
+  tr_lr_patience: 1
+  bs: 32
+  train_shuffle: True
+  num_workers: 4
+
+  tr_db_list:
+        - blizzard_2008_A
+        - blizzard_2008_B
+        - blizzard_2009_EH1
+        - blizzard_2009_EH2
+        - blizzard_2009_ES1_ES2
+        - blizzard_2010_EH1
+        - blizzard_2010_ES1_ES3
+        - blizzard_2010_MH1
+        - blizzard_2010_MH2
+        - blizzard_2010_MS1
+        - blizzard_2011_EH1
+        - blizzard_2013_EH1
+        - blizzard_2013_EH2
+        - blizzard_2014_IH_system
+        - blizzard_2015_IH_system
+        - blizzard_2019_MH
+        - HI_SD
+        - vcc_2018_hub_train
+        - vcc_2018_spo_train
+  val_db_list:
+        - blizzard_2008_C
+        - blizzard_2009_MH
+        - blizzard_2009_MS1_MS2
+        - blizzard_2010_EH2
+        - blizzard_2012_EH1
+        - blizzard_2016_EH_system
+        - vcc_2018_hub_val
+        - vcc_2018_spo_val
+model:
+  pretrained_path: "/ds/audio/Speech_Quality_Datasets/weights/synth-AST/psamd_mos.pth"
