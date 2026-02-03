@@ -6,9 +6,9 @@ training:
 
   runname: ft-synth-RUN-1
   # Paths  ---------------------------------------------------------------------------
-  output_dir: "/ds/audio/Speech_Quality_Datasets/weights/synth-AST" # base output directory
-  data_dir: "/ds/audio/Speech_Quality_Datasets/tts_data"
-  dev_labels_path: "/ds/audio/Speech_Quality_Datasets/tts_data/tts_file_stats.csv"
+  output_dir: "/Speech_Quality_Datasets/weights/synth-AST" # base output directory
+  data_dir: "/Speech_Quality_Datasets/tts_data"
+  dev_labels_path: "/Speech_Quality_Datasets/tts_data/tts_file_stats.csv"
 
   # Training parame5iers  -------------------------------------------------------------
   max_epochs: 200
@@ -49,4 +49,4 @@ training:
         - vcc_2018_hub_val
         - vcc_2018_spo_val
 model:
-  pretrained_path: "/ds/audio/Speech_Quality_Datasets/weights/synth-AST/psamd_mos.pth"
+  pretrained_path: "/Speech_Quality_Datasets/weights/synth-AST/psamd_mos.pth"
